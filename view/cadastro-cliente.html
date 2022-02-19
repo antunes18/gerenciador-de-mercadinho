@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cliente</title>
+        <link rel="stylesheet" href="../css/estilos.css">
+    </head>
+    <body>
+        <header>
+            <h1>Cadastro de cliente</h1>
+            <div>
+                <button><a href="index.html">Voltar para Página Inicial</a></button>
+            </div>
+            &nbsp;
+            <div>
+                <button><a href="cadastro-caixa.html">Cadastrar caixa</a></button>
+                <button><a href="cadastro-produto.html">Cadastrar produto</a></button>
+            </div>
+        </header>
+        &nbsp;
+        <main>
+            <form>
+                <label for="nome">Nome</label>
+                <div>
+                    <input type="text" autofocus required id="nome" autocomplete="off" name="nome" maxlength="45">
+                </div>
+                <label for="nome">Número de celular</label>
+                <div>
+                    <input type="text" autofocus required id="celular" autocomplete="off" name="celular" minlength="11"
+                        maxlength="13">
+                </div>
+                <div>
+                    <input type="button" id="btn-cadastrar" value="Cadastrar">
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

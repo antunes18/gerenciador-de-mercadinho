@@ -1,0 +1,12 @@
+form div {
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+#btn-cadastrar {
+    cursor: pointer;
+}
