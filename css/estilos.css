@@ -1,3 +1,9 @@
+*{
+   font-family: helvetica;
+   color: #BFB375 ;
+   background-color: #038C4C ;
+}
+
 form div {
     margin-top: 0.2rem;
     margin-bottom: 0.5rem;
@@ -10,3 +16,44 @@ a {
 #btn-cadastrar {
     cursor: pointer;
 }
+
+h1{
+    text-align: center;
+}
+
+button {
+    border: 1px solid #BFB375;
+    border-radius: 3px;
+}
+
+header {
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+}
+
+form{
+    text-align: center;
+}
+
+input {
+    border: 1px solid #BFB375;
+    border-radius: 3px;
+}
+
+input::placeholder{
+    color:#BFB375;
+}
+
+select {
+    border: 1px solid #BFB375;
+    border-radius: 3px;
+}
+
+textarea {
+    border: 1px solid #BFB375;
+    border-radius: 3px;
+}
+
