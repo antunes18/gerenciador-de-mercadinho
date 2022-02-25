@@ -1,0 +1,30 @@
+{
+  "name": "gerenciador-de-mercadinho",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antunes18/gerenciador-de-mercadinho.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antunes18/gerenciador-de-mercadinho/issues"
+  },
+  "homepage": "https://github.com/antunes18/gerenciador-de-mercadinho",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.2",
+    "hbs": "^4.2.0",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
