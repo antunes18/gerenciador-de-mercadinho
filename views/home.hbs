@@ -1,35 +1,104 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home</title>
-        <link rel="stylesheet" href="../css/estilos.css">
-        <style>
-            a {
-                text-decoration: none;
-            }
-        </style>
-    </head>
-    <body>
+<html lang='pt-br'>
+
+<head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Home</title>
+    <link rel='stylesheet' href='../css/estilos.css' />
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
         <header>
             <h1>EE-Mercadinho</h1>
         </header>
         <nav>
             <div>
-                <button type="button" class="btn btn-outline-dark">
-                    <a class="link-success" href="cadastro-caixa.html">Cadastrar Caixa</a>
+                <button type='button' class='btn btn-outline-dark'>
+                    <a class='link-success' href='cadastro-caixa.html'>Cadastrar Caixa</a>
                 </button>
-                <button type="button" class="btn btn-outline-dark">
-                    <a class="link-success" href="cadastro-cliente.html">Cadastrar Cliente</a>
+                <button type='button' class='btn btn-outline-dark'>
+                    <a class='link-success' href='cadastro-cliente.html'>Cadastrar
+                        Cliente</a>
                 </button>
-                <button type="button" class="btn btn-outline-dark">
-                    <a class="link-success" href="cadastro-produto.html">Cadastrar Produto</a>
+                <button type='button' class='btn btn-outline-dark'>
+                    <a class='link-success' href='cadastro-produto.html'>Cadastrar
+                        Produto</a>
                 </button>
             </div>
         </nav>
-        <main></main>
-        <footer></footer>
-    </body>
+    </div>
+    <main class='container pt-4 pb-4'>
+        <div class='table-responsive'>
+            <table class='table table-hover table-bordered align-middle caption-top'>
+                <caption>Lista de produtos à venda</caption>
+                <thead class='table-dark'>
+                    <tr>
+                        <th scope='col'>ID</th>
+                        <th scope='col'>Produto</th>
+                        <th scope='col'>Fabricante</th>
+                        <th scope='col'>Preço</th>
+                        <th scope='col'>Disponível</th>
+                        <th scope='col'>Categoria</th>
+                        <th scope='col'>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope='row'>1</th>
+                        <td>Café 100% arábica</td>
+                        <td>Espressiata</td>
+                        <td>R$ 18,99</td>
+                        <td>5</td>
+                        <td>Bebidas</td>
+                        <td>
+                            <a href='#' type='button' class='btn btn-small btn-danger'
+                                title='Excluir detalhes do produto selecionado.'>
+                                <i class='bi- bi-trash'></i>
+                            </a>
+                            <a href='#' type='button' class='btn btn-dark btn-small'
+                                title='Atualizar detalhes do produto selecionado.'>
+                                <i class='bi- bi-pencil'></i>
+                            </a>
+                            <a href='#' type='button' class='btn btn-success btn-small'
+                                title='Ver mais detalhes do produto selecionado.'>
+                                <i class='bi- bi-eye'></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope='row'>2</th>
+                        <td>Toddynho</td>
+                        <td>PepsiCo</td>
+                        <td>R$ 2,50</td>
+                        <td>25</td>
+                        <td>Bebidas</td>
+                        <td>
+                            <a href='#' type='button' class='btn btn-small btn-danger'
+                                title='Excluir detalhes do produto selecionado.'>
+                                <i class='bi- bi-trash'></i>
+                            </a>
+                            <a href='#' type='button' class='btn btn-dark btn-small'
+                                title='Atualizar detalhes do produto selecionado.'>
+                                <i class='bi- bi-pencil'></i>
+                            </a>
+                            <a href='#' type='button' class='btn btn-success btn-small'
+                                title='Ver mais detalhes do produto selecionado.'>
+                                <i class='bi- bi-eye'></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+
 </html>
