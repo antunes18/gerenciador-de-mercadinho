@@ -21,3 +21,25 @@ exports.view = (req, res) => {
     }
   );
 };
+
+// Find products
+exports.search = (req, res) => {
+  let searchValue = req.body.search;
+
+  conn.query(
+    `SELECT
+        *
+      FROM 
+        produto
+      WHERE
+        nome LIKE ? OR fabricante LIKE ? OR preco LIKE ?`,
+    [`%${searchValue}%`, `%${searchValue}%`, `%${searchValue}%`],
+    (error, rows) => {
+      if (!error) {
+        res.render('home', { rows });
+      } else {
+        console.log(error);
+      }
+    }
+  );
+};
