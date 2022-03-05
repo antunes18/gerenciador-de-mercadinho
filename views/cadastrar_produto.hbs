@@ -1,0 +1,84 @@
+<html lang='pt-br'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Produto</title>
+    <link rel='stylesheet' href='../css/estilos.css' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css' />
+    <style>
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="animate__animated animate__fadeIn">
+      <h1>Cadastro de produtos</h1>
+    </header>
+    &nbsp;
+    {{#if message}}
+      <div class="alert alert-success alert-dismissible fade show animate__animated animate__fadeIn" role="success">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {{/if}}
+    <main class="animate__animated animate__fadeIn">
+      <form action="/cadastroproduto" method="post" novalidate>
+        <label for='nomeProdutoInput' class="form-label fw-bold">Nome</label>
+        <div class="mb-3 input-group">
+          <input type='text' autofocus="on" class="form-control" id="nomeProdutoInput" name="nome" placeholder="Ex: Nescau 2.0">
+        </div>
+
+        <label for='fabricanteInput' class="form-label fw-bold">Fabricante</label>
+        <div class="mb-3 input-group">
+          <span class="input-group-text">
+            <i class="bi bi-building"></i>
+          </span>
+          <input type='text' autofocus="on" class="form-control" id="fabricanteInput" name="fabricante" placeholder="Ex: Nestlé">
+        </div>
+
+        <label for='precoInput' class="form-label fw-bold">Preço</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">R$</span>
+          <input type='text' autofocus="on" class="form-control" id="precoInput" name="preco" placeholder="Ex: 2,50">
+        </div>
+
+        <div class="mb-3">
+          <label for="dataValidadeInput" class="form-label fw-bold">Data de validade</label>
+          <input type='date' class="form-control" id="dataValidadeInput" name="validade">
+        </div>
+
+        <label for="" class="form-label fw-bold">Quantidade</label>
+        <div class="mb-3 input-group">
+          <span class="input-group-text">
+            <i class="bi bi-123"></i>
+          </span>
+          <input type="number" min="1" class="form-control" name="quantidade" placeholder="Deve ser maior ou igual a 1">
+        </div>
+
+        <label for="categoriaSelect" class="form-label fw-bold">Categoria</label>
+        <div class="mb-3 input-group">
+          <span class="input-group-text">
+            <i class="bi bi-tag"></i>
+          </span>
+          <select class="form-select" id="categoriaSelect" name="categoria">
+            <option selected disabled>Selecione uma categoria válida</option>
+            <option value='1'>Alimentos</option>
+            <option value='2'>Bebidas</option>
+            <option value='3'>Carnes</option>
+            <option value='4'>Frios</option>
+            <option value='5'>Frutas</option>
+            <option value='6'>Verduras</option>
+            <option value='7'>Legumes</option>
+            <option value='8'>Higiene</option>
+            <option value='9'>Limpeza</option>
+            <option value='10'>Padaria</option>
+            <option value='11'>Outras</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+      </form>
+    </main>
+  </body>
+</html>

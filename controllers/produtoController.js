@@ -43,3 +43,38 @@ exports.search = (req, res) => {
     }
   );
 };
+
+// View add product page
+exports.addView = (req, res) => {
+  res.render('cadastrar_produto');
+};
+
+// Add new product
+exports.add = (req, res) => {
+  const { nome, fabricante, preco, validade, quantidade, categoria } = req.body;
+
+  quantidadeParsed = parseInt(quantidade);
+  precoParsed = parseFloat(preco);
+
+  conn.query(
+    `INSERT INTO 
+        produto 
+      SET 
+        nome = ?, 
+        fabricante = ?, 
+        preco = ?, 
+        validade = ?,
+        quantidade = ?,
+        categoria = ?`,
+    [nome, fabricante, precoParsed, validade, quantidadeParsed, categoria],
+    (error, rows) => {
+      if (!error) {
+        res.render('cadastrar_produto', {
+          message: 'Produto inserido com sucesso no banco de dados! 😎',
+        });
+      } else {
+        console.log(error);
+      }
+    }
+  );
+};
