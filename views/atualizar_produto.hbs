@@ -1,32 +1,25 @@
-<html lang='pt-br'>
-  <head>
+<head>
     <meta charset='UTF-8' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Produto</title>
-    <link rel='stylesheet' href='../css/estilos.css' />
+    <title>Atualizar mercadoria</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css' />
-    <style>
-      a {
-        text-decoration: none;
-      }
-    </style>
-  </head>
-  <body>
+</head>
+<body>
     <header class="animate__animated animate__fadeIn">
-      <h1>Cadastro de produtos</h1>
+        <h1>Editar produto</h1>
     </header>
-    &nbsp;
     {{#if message}}
-      <div class="alert alert-success alert-dismissible fade show animate__animated animate__fadeIn" role="success">
+    <div class="alert alert-success alert-dismissible fade show animate__animated animate__fadeIn" role="success">
         {{ message }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
+    </div>
     {{/if}}
     <main class="animate__animated animate__fadeIn">
-      <form action="/cadastroproduto" method="post" novalidate>
-        {{> form_produto}}
-      </form>
+        {{#each rows}}
+        <form action="/atualizarproduto/{{this.id_produto}}" method="post">
+            {{> form_produto}}
+        </form>
+        {{/each}}
     </main>
-  </body>
-</html>
+</body>

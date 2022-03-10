@@ -78,3 +78,68 @@ exports.add = (req, res) => {
     }
   );
 };
+
+// Update product "view" 
+exports.edit = (req, res) => {
+  conn.query(
+    `SELECT 
+        *
+      FROM 
+        produto
+      WHERE
+        id_produto = ?`, [req.params.id],
+    (error, rows) => {
+      if (!error) {
+        console.log(rows);
+        res.render('atualizar_produto', { rows });
+      } else {
+        console.log(error);
+      }
+    }
+  );
+};
+
+// Update product
+exports.update = (req, res) => {
+  const { nome, fabricante, preco, validade, quantidade, categoria } = req.body;
+
+  quantidadeParsed = parseInt(quantidade);
+  precoParsed = parseFloat(preco);
+
+  conn.query(
+    `UPDATE
+      produto
+    SET
+      nome = ?,
+      fabricante = ?,
+      preco = ?,
+      validade = ?,
+      quantidade = ?,
+      categoria = ?
+    WHERE
+      id_produto = ?`, [nome, fabricante, precoParsed, validade, quantidadeParsed, categoria, req.params.id],
+    (error, rows) => {
+      if (!error) {
+        conn.query(
+          `SELECT 
+              *
+            FROM 
+              produto
+            WHERE
+              id_produto = ?`, [req.params.id],
+          (error, rows) => {
+            if (!error) {
+              console.log(rows);
+              res.render('atualizar_produto', { rows, message: `Produto atualizado!` });
+            } else {
+              console.log(error);
+            }
+          }
+        );
+        console.log(rows);
+      } else { 
+        console.log(error);
+      }
+    }
+  );
+};

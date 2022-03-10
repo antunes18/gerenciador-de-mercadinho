@@ -1,0 +1,94 @@
+<label for='nomeProdutoInput' class='form-label fw-bold'>Nome</label>
+<div class='mb-3 input-group'>
+  <input
+    type='text'
+    autofocus='on'
+    class='form-control'
+    id='nomeProdutoInput'
+    name='nome'
+    placeholder='Ex: Nescau 2.0'
+    value="{{this.nome}}"
+    required
+  />
+</div>
+
+<label for='fabricanteInput' class='form-label fw-bold'>Fabricante</label>
+<div class='mb-3 input-group'>
+  <span class='input-group-text'>
+    <i class='bi bi-building'></i>
+  </span>
+  <input
+    type='text'
+    autofocus='on'
+    class='form-control'
+    id='fabricanteInput'
+    name='fabricante'
+    placeholder='Ex: Nestlé'
+    value="{{this.fabricante}}"
+    required
+  />
+</div>
+
+<label for='precoInput' class='form-label fw-bold'>Preço</label>
+<div class='input-group mb-3'>
+  <span class='input-group-text'>R$</span>
+  <input
+    type='text'
+    autofocus='on'
+    class='form-control'
+    id='precoInput'
+    name='preco'
+    placeholder='Ex: 2,50'
+    value="{{this.preco}}"
+    required
+  />
+</div>
+
+<div class='mb-3'>
+  <label for='dataValidadeInput' class='form-label fw-bold'>Data de validade</label>
+  <input
+    type='date'
+    class='form-control'
+    id='dataValidadeInput'
+    name='validade'
+    value="{{this.validade}}"
+  />
+</div>
+
+<label for='' class='form-label fw-bold'>Quantidade</label>
+<div class='mb-3 input-group'>
+  <span class='input-group-text'>
+    <i class='bi bi-123'></i>
+  </span>
+  <input
+    type='number'
+    min='1'
+    class='form-control'
+    name='quantidade'
+    placeholder='Deve ser maior ou igual a 1'
+    value="{{this.quantidade}}"
+    required
+  />
+</div>
+
+<label for='categoriaSelect' class='form-label fw-bold'>Categoria</label>
+<div class='mb-3 input-group'>
+  <span class='input-group-text'>
+    <i class='bi bi-tag'></i>
+  </span>
+  <select class='form-select' id='categoriaSelect' name='categoria' value="{{this.categoria}}">
+    <option selected disabled>Selecione uma categoria válida</option>
+    <option value='1'>Alimentos</option>
+    <option value='2'>Bebidas</option>
+    <option value='3'>Carnes</option>
+    <option value='4'>Frios</option>
+    <option value='5'>Frutas</option>
+    <option value='6'>Verduras</option>
+    <option value='7'>Legumes</option>
+    <option value='8'>Higiene</option>
+    <option value='9'>Limpeza</option>
+    <option value='10'>Padaria</option>
+    <option value='11'>Outras</option>
+  </select>
+</div>
+<button type='submit' class='btn btn-success'>Confirmar</button>
