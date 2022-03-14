@@ -143,3 +143,15 @@ exports.update = (req, res) => {
     }
   );
 };
+
+exports.delete = (req, res) => {
+  conn.query(`DELETE FROM produto WHERE id_produto = ?`, [req.params.id],
+    (error) => {
+      if (!error) {
+        res.redirect('/');
+      } else {
+        console.log(error);
+      }
+    }
+  );
+}
