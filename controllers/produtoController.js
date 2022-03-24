@@ -14,7 +14,8 @@ exports.view = (req, res) => {
         produto`,
     (error, rows) => {
       if (!error) {
-        res.render('home', { rows });
+        let produtoRemovido = req.query.removido;
+        res.render('home', { rows, produtoRemovido });
       } else {
         console.log(error);
       }
@@ -148,7 +149,8 @@ exports.delete = (req, res) => {
   conn.query(`DELETE FROM produto WHERE id_produto = ?`, [req.params.id],
     (error) => {
       if (!error) {
-        res.redirect('/');
+        let produtoRemovido = encodeURIComponent('Produto deletado com sucesso.');
+        res.redirect(`/?removido=${produtoRemovido}`);
       } else {
         console.log(error);
       }

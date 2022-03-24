@@ -11,8 +11,8 @@ router.post('/cadastroproduto', produtoController.add);
 router.get('/atualizarproduto/:id', produtoController.edit);
 router.post('/atualizarproduto/:id', produtoController.update);
 
-router.get('/:id', produtoController.delete);
-
 router.get('/info/:id', produtoController.viewInfo);
+
+router.get('/:id', produtoController.delete);
 
 module.exports = router;

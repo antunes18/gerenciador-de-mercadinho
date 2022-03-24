@@ -28,13 +28,26 @@
               Cliente</a>
           </button>
           <button type='button' class='btn btn-outline-dark'>
-            <a class='link-success' href='/cadastroproduto'>Cadastrar
-              Produto</a>
+            <a class='link-success' href='/cadastroproduto'>Cadastrar Produto</a>
           </button>
         </div>
       </nav>
     </div>
     <main class='container pt-4 pb-4'>
+      {{#if produtoRemovido}}
+        <div
+          class='alert alert-success alert-dismissible fade show animate__animated animate__fadeIn'
+          role='success'
+        >
+          Produto removido com sucesso.
+          <button
+            type='button'
+            class='btn-close'
+            data-bs-dismiss='alert'
+            aria-label='Close'
+          ></button>
+        </div>
+      {{/if}}
       {{#if rows}}
         <div class='table-responsive animate__animated animate__fadeIn'>
           <table
@@ -69,7 +82,7 @@
                       <i class='bi- bi-trash'></i>
                     </a>
                     <a
-                      href="/atualizarproduto/{{this.id_produto}}"
+                      href='/atualizarproduto/{{this.id_produto}}'
                       type='button'
                       class='btn btn-dark btn-small'
                       title='Atualizar detalhes do produto selecionado.'
