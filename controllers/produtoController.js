@@ -137,7 +137,7 @@ exports.update = (req, res) => {
           }
         );
         console.log(rows);
-      } else { 
+      } else {
         console.log(error);
       }
     }
@@ -155,3 +155,21 @@ exports.delete = (req, res) => {
     }
   );
 }
+
+exports.viewInfo = (req, res) => {
+  conn.query(
+    `SELECT 
+        *
+      FROM 
+        produto
+      WHERE
+        id_produto = ?`, [req.params.id],
+    (error, rows) => {
+      if (!error) {
+        res.render('detalhes-produto', { rows });
+      } else {
+        console.log(error);
+      }
+    }
+  );
+};

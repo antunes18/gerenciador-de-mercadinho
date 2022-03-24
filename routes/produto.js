@@ -13,4 +13,6 @@ router.post('/atualizarproduto/:id', produtoController.update);
 
 router.get('/:id', produtoController.delete);
 
+router.get('/info/:id', produtoController.viewInfo);
+
 module.exports = router;
